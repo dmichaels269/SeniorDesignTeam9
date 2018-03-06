@@ -143,8 +143,8 @@ Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/ha
 Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/bcomdef.h
 Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/osal/src/inc/comdef.h
 Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/hal_types.h
-Startup/main.obj: C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/peripheral.h
-Startup/main.obj: C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/Application/simple_peripheral.h
+Startup/main.obj: C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/peripheral.h
+Startup/main.obj: C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/Application/simple_peripheral.h
 Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/inc/hw_memmap.h
 Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/vims.h
 Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_types.h
@@ -332,8 +332,8 @@ C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/inc/hal_defs
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/bcomdef.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/osal/src/inc/comdef.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/hal_types.h: 
-C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/peripheral.h: 
-C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/Application/simple_peripheral.h: 
+C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/peripheral.h: 
+C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/Application/simple_peripheral.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/inc/hw_memmap.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/vims.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_types.h: 

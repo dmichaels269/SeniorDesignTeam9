@@ -55,6 +55,8 @@
 #include <ti/sysbios/knl/Event.h>
 #include <ti/sysbios/knl/Queue.h>
 #include <ti/display/Display.h>
+#include <ti/drivers/gpio/GPIOCC26XX.h> //Added by DM to enable functionality of GPIO
+#include <ti/drivers/pwm/PWMTimerCC26XX.h> //Added by DM to enable PWM Timer
 
 #if defined( USE_FPGA ) || defined( DEBUG_SW_TRACE )
 #include <driverlib/ioc.h>
@@ -172,6 +174,7 @@ typedef struct
 
 // Display Interface
 Display_Handle dispHandle = NULL;
+PWM_Handle PWM_LED_Handle; //Added by DM
 
 /*********************************************************************
  * LOCAL VARIABLES
@@ -297,6 +300,7 @@ extern void AssertHandler(uint8 assertCause, uint8 assertSubcause);
  * PROFILE CALLBACKS
  */
 
+
 // Peripheral GAPRole Callbacks
 static gapRolesCBs_t SimpleBLEPeripheral_gapRoleCBs =
 {
@@ -321,6 +325,32 @@ static simpleProfileCBs_t SimpleBLEPeripheral_simpleProfileCBs =
 /*********************************************************************
  * PUBLIC FUNCTIONS
  */
+
+void app_PWM_init(void)
+{
+    //Added by DM
+     PWM_init();
+
+    // Added by DM//
+    //void PWM_LED_creatTimer(void)
+      PWM_Params PWM_LED_Params;
+      PWM_Params_init(&PWM_LED_Params);
+
+      PWM_LED_Params.idleLevel      = PWM_IDLE_LOW;
+      PWM_LED_Params.periodUnits    = PWM_PERIOD_HZ;
+      PWM_LED_Params.periodValue   = 100;
+      PWM_LED_Params.dutyUnits      = PWM_DUTY_FRACTION;
+      PWM_LED_Params.dutyValue     = PWM_DUTY_FRACTION_MAX / 2;
+
+      PWM_LED_Handle = PWM_open(Board_GPIO_GLED, &PWM_LED_Params);
+      GPIO_write(Board_GPIO_RLED, 0);
+      if(PWM_LED_Handle == NULL)
+      {
+          GPIO_write(Board_GPIO_RLED, 1);
+          while(1);
+      }
+    // End of modified code//
+}
 
 /*********************************************************************
  * @fn      SimpleBLEPeripheral_createTask
@@ -1130,7 +1160,7 @@ static void SimpleBLEPeripheral_processCharValueChangeEvt(uint8_t paramID)
       SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1, &newValue);
 
       Display_print1(dispHandle, 4, 0, "Char 1: %d", (uint16_t)newValue);
-      GPIO_toggle(Board_GPIO_RLED);
+      PWM_start(PWM_LED_Handle);
       break;
 
     case SIMPLEPROFILE_CHAR3:

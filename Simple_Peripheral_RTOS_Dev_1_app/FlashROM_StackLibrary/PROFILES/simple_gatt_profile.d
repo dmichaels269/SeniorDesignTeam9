@@ -11,7 +11,7 @@ PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/sourc
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/hal_types.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/../_common/cc26xx/_hal_types.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/inc/hal_defs.h
-PROFILES/simple_gatt_profile.obj: C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/Application/util.h
+PROFILES/simple_gatt_profile.obj: C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/Application/util.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages/ti/sysbios/knl/Clock.h
 PROFILES/simple_gatt_profile.obj: C:/ti/ccs730/xdctools_3_50_03_33_core/packages/xdc/std.h
 PROFILES/simple_gatt_profile.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdarg.h
@@ -182,14 +182,14 @@ PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/sourc
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/hci_tl.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gapgattserver.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/linkdb.h
-PROFILES/simple_gatt_profile.obj: C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/Include/gapbondmgr.h
+PROFILES/simple_gatt_profile.obj: C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/Include/gapbondmgr.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gap.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/sm.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/l2cap.h
-PROFILES/simple_gatt_profile.obj: C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_uuid.h
+PROFILES/simple_gatt_profile.obj: C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_uuid.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gatt.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/att.h
-PROFILES/simple_gatt_profile.obj: C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_profile_uuid.h
+PROFILES/simple_gatt_profile.obj: C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_profile_uuid.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gattservapp.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/osal/src/inc/osal_snv.h
 PROFILES/simple_gatt_profile.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/hal_types.h
@@ -211,7 +211,7 @@ C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/inc/hal_asse
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/hal_types.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/../_common/cc26xx/_hal_types.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/inc/hal_defs.h: 
-C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/Application/util.h: 
+C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/Application/util.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages/ti/sysbios/knl/Clock.h: 
 C:/ti/ccs730/xdctools_3_50_03_33_core/packages/xdc/std.h: 
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdarg.h: 
@@ -382,14 +382,14 @@ C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/hci_event.h:
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/hci_tl.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gapgattserver.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/linkdb.h: 
-C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/Include/gapbondmgr.h: 
+C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/Include/gapbondmgr.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gap.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/sm.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/l2cap.h: 
-C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_uuid.h: 
+C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_uuid.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gatt.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/att.h: 
-C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_profile_uuid.h: 
+C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_profile_uuid.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gattservapp.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/osal/src/inc/osal_snv.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/hal_types.h: 

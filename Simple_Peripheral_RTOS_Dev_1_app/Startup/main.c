@@ -211,10 +211,14 @@ int main()
   /* Start tasks of external images - Priority 5 */
   ICall_createRemoteTasks();
 
+
+
   /* Kick off profile - Priority 3 */
   GAPRole_createTask();
 
   SimpleBLEPeripheral_createTask();
+
+  app_PWM_init();
 
   /* enable interrupts and start SYS/BIOS */
   BIOS_start();

@@ -7,5 +7,5 @@
 #       or equal to the generated config header
 #
 linker.cmd: package/cfg/app_ble_pem3.xdl
-	$(SED) 's"^\"\(package/cfg/app_ble_pem3cfg.cmd\)\"$""\"C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/FlashROM_StackLibrary/configPkg/\1\""' package/cfg/app_ble_pem3.xdl > $@
+	$(SED) 's"^\"\(package/cfg/app_ble_pem3cfg.cmd\)\"$""\"C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/FlashROM_StackLibrary/configPkg/\1\""' package/cfg/app_ble_pem3.xdl > $@
 	-$(SETDATE) -r:max package/cfg/app_ble_pem3.h compiler.opt compiler.opt.defs

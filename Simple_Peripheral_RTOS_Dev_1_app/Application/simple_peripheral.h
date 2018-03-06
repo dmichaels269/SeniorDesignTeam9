@@ -78,6 +78,7 @@ extern "C"
  */
 extern void SimpleBLEPeripheral_createTask(void);
 
+extern void app_PWM_init(void);
 
 /*********************************************************************
 *********************************************************************/

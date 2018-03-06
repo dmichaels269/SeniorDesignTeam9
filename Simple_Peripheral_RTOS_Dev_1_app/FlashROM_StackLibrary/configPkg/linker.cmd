@@ -9,8 +9,8 @@
  */
 
 
--l"C:\Users\dan.michaels\workspace_v7\Simple_Peripheral_RTOS_Dev_1_app\FlashROM_StackLibrary\configPkg\package\cfg\app_ble_pem3.oem3"
--l"C:\Users\dan.michaels\workspace_v7\Simple_Peripheral_RTOS_Dev_1_app\TOOLS\src\sysbios\rom_sysbios.aem3"
+-l"C:\Users\dan.michaels\Documents\GitHub\SeniorDesignTeam9\Simple_Peripheral_RTOS_Dev_1_app\FlashROM_StackLibrary\configPkg\package\cfg\app_ble_pem3.oem3"
+-l"C:\Users\dan.michaels\Documents\GitHub\SeniorDesignTeam9\Simple_Peripheral_RTOS_Dev_1_app\TOOLS\src\sysbios\rom_sysbios.aem3"
 -l"C:\ti\simplelink_cc2640r2_sdk_1_50_00_58\kernel\tirtos\packages\ti\targets\arm\rtsarm\lib\boot.aem3"
 -l"C:\ti\simplelink_cc2640r2_sdk_1_50_00_58\kernel\tirtos\packages\ti\targets\arm\rtsarm\lib\auto_init.aem3"
 

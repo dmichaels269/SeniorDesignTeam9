@@ -7,7 +7,7 @@
         <srcFile name="package/cfg/app_ble_pem3.c"/>
     </sources>
     <configscripts>
-        <srcFile name="C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/TOOLS/app_ble.cfg"/>
+        <srcFile name="C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/TOOLS/app_ble.cfg"/>
     </configscripts>
     <makefiles>
         <srcFile name="package.mak" src="package.bld"/>
@@ -44,7 +44,7 @@
         isPartial="false"
         xCfgScript="package/cfg/app_ble_pem3.cfg"
         xCfgPrefix="package/cfg/app_ble_pem3"
-        cfgScript="C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/TOOLS/app_ble.cfg"
+        cfgScript="C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/TOOLS/app_ble.cfg"
         cfgArgs="null"
         />
     </configurations>
@@ -56,7 +56,7 @@
         profile="release"
         xCfgScript="package/cfg/app_ble_pem3.cfg"
         xCfgPrefix="package/cfg/app_ble_pem3"
-        cfgScript="C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/TOOLS/app_ble.cfg"
+        cfgScript="C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/TOOLS/app_ble.cfg"
         cfgArgs="null"
         />
     </executables>

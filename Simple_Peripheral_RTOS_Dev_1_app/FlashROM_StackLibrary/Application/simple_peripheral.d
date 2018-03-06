@@ -145,8 +145,36 @@ Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kern
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages/ti/sysbios/knl/Queue.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/display/Display.h
 Application/simple_peripheral.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdarg.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/icall/src/inc/icall.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/gpio/GPIOCC26XX.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/GPIO.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/DeviceFamily.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/ioc.h
 Application/simple_peripheral.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdbool.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_types.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/../inc/hw_chip_def.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_memmap.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_ioc.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_ints.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/interrupt.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_nvic.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/debug.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/cpu.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_cpu_scs.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../driverlib/rom.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/gpio.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_gpio.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/pwm/PWMTimerCC26XX.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/PIN.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/PWM.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/timer/GPTimerCC26XX.h
+Application/simple_peripheral.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/dpl/HwiP.h
+Application/simple_peripheral.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/inc/hw_gpt.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/event.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_event.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/timer.h
+Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/icall/src/inc/icall.h
 Application/simple_peripheral.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdlib.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/inc/hal_assert.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/hal_types.h
@@ -173,7 +201,6 @@ Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/sour
 Application/simple_peripheral.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/dpl/SemaphoreP.h
 Application/simple_peripheral.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/DeviceFamily.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/rf_common_cmd.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/rf_mailbox.h
 Application/simple_peripheral.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/string.h
@@ -189,14 +216,14 @@ Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/sour
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/hci_tl.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gapgattserver.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/linkdb.h
-Application/simple_peripheral.obj: C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/Include/gapbondmgr.h
+Application/simple_peripheral.obj: C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/Include/gapbondmgr.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gap.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/sm.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/l2cap.h
-Application/simple_peripheral.obj: C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_uuid.h
+Application/simple_peripheral.obj: C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_uuid.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gatt.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/att.h
-Application/simple_peripheral.obj: C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_profile_uuid.h
+Application/simple_peripheral.obj: C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_profile_uuid.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gattservapp.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/osal/src/inc/osal_snv.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/hal_types.h
@@ -206,36 +233,20 @@ Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/sour
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/TRNGCC26XX.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/icall/inc/icall_api_idx.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/profiles/dev_info/devinfoservice.h
-Application/simple_peripheral.obj: C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/simple_gatt_profile.h
-Application/simple_peripheral.obj: C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/peripheral.h
+Application/simple_peripheral.obj: C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/simple_gatt_profile.h
+Application/simple_peripheral.obj: C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/peripheral.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/common/cc26xx/board_key.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/target/board.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/target/./cc2640r2lp/cc2640r2lp_board.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/target/./cc2640r2lp/../../boards/CC2640R2_LAUNCHXL/Board.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/ADC.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/ADCBuf.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/PWM.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/SPI.h
 Application/simple_peripheral.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/UART.h
 Application/simple_peripheral.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/Watchdog.h
 Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/target/./cc2640r2lp/../../boards/CC2640R2_LAUNCHXL/CC2640R2_LAUNCHXL.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/PIN.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/ioc.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_types.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/../inc/hw_chip_def.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_memmap.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_ioc.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_ints.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/interrupt.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_nvic.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/debug.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/cpu.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_cpu_scs.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../driverlib/rom.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/gpio.h
-Application/simple_peripheral.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_gpio.h
 Application/simple_peripheral.obj: ../Application/simple_peripheral.h
 
 ../Application/simple_peripheral.c: 
@@ -383,8 +394,36 @@ C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages/ti/sysbios/knl/E
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages/ti/sysbios/knl/Queue.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/display/Display.h: 
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdarg.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/icall/src/inc/icall.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/gpio/GPIOCC26XX.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/GPIO.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/DeviceFamily.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/ioc.h: 
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdbool.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_types.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/../inc/hw_chip_def.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_memmap.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_ioc.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_ints.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/interrupt.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_nvic.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/debug.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/cpu.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_cpu_scs.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../driverlib/rom.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/gpio.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_gpio.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/pwm/PWMTimerCC26XX.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/PIN.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/PWM.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/timer/GPTimerCC26XX.h: 
+C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/dpl/HwiP.h: 
+C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/inc/hw_gpt.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/event.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_event.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/timer.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/icall/src/inc/icall.h: 
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdlib.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/inc/hal_assert.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/hal_types.h: 
@@ -411,7 +450,6 @@ C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/dpl/ClockP.h:
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/dpl/SemaphoreP.h: 
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/DeviceFamily.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/rf_common_cmd.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/rf_mailbox.h: 
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/string.h: 
@@ -427,14 +465,14 @@ C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/hci_event.h:
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/hci_tl.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gapgattserver.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/linkdb.h: 
-C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/Include/gapbondmgr.h: 
+C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/Include/gapbondmgr.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gap.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/sm.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/l2cap.h: 
-C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_uuid.h: 
+C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_uuid.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gatt.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/att.h: 
-C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_profile_uuid.h: 
+C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/gatt_profile_uuid.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/gattservapp.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/osal/src/inc/osal_snv.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/hal_types.h: 
@@ -444,34 +482,18 @@ C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/inc/../rom/map_direc
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/hal/src/target/_common/TRNGCC26XX.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/icall/inc/icall_api_idx.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/profiles/dev_info/devinfoservice.h: 
-C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/simple_gatt_profile.h: 
-C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/peripheral.h: 
+C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/simple_gatt_profile.h: 
+C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/PROFILES/peripheral.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/common/cc26xx/board_key.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/target/board.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/target/./cc2640r2lp/cc2640r2lp_board.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/target/./cc2640r2lp/../../boards/CC2640R2_LAUNCHXL/Board.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/ADC.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/ADCBuf.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/PWM.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/SPI.h: 
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/UART.h: 
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/Watchdog.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/target/./cc2640r2lp/../../boards/CC2640R2_LAUNCHXL/CC2640R2_LAUNCHXL.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/PIN.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/ioc.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_types.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/../inc/hw_chip_def.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_memmap.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_ioc.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_ints.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/interrupt.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_nvic.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/debug.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/cpu.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_cpu_scs.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../driverlib/rom.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/gpio.h: 
-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/devices/cc26x0r2/driverlib/../inc/hw_gpio.h: 
 ../Application/simple_peripheral.h: 

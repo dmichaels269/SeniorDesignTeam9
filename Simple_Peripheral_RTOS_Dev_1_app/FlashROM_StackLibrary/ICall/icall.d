@@ -201,7 +201,7 @@ ICall/icall.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages
 ICall/icall.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages/ti/sysbios/BIOS.h
 ICall/icall.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages/ti/sysbios/package/BIOS_RtsGateProxy.h
 ICall/icall.obj: C:/ti/ccs730/xdctools_3_50_03_33_core/packages/xdc/cfg/global.h
-ICall/icall.obj: C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/FlashROM_StackLibrary/configPkg/package/cfg/app_ble_pem3.h
+ICall/icall.obj: C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/FlashROM_StackLibrary/configPkg/package/cfg/app_ble_pem3.h
 ICall/icall.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages/ti/sysbios/heaps/HeapCallback.h
 ICall/icall.obj: C:/ti/ccs730/xdctools_3_50_03_33_core/packages/xdc/runtime/Types.h
 ICall/icall.obj: C:/ti/ccs730/xdctools_3_50_03_33_core/packages/xdc/runtime/IInstance.h
@@ -500,7 +500,7 @@ C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages/ti/sysbios/knl/E
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages/ti/sysbios/BIOS.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages/ti/sysbios/package/BIOS_RtsGateProxy.h: 
 C:/ti/ccs730/xdctools_3_50_03_33_core/packages/xdc/cfg/global.h: 
-C:/Users/dan.michaels/workspace_v7/Simple_Peripheral_RTOS_Dev_1_app/FlashROM_StackLibrary/configPkg/package/cfg/app_ble_pem3.h: 
+C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_app/FlashROM_StackLibrary/configPkg/package/cfg/app_ble_pem3.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/kernel/tirtos/packages/ti/sysbios/heaps/HeapCallback.h: 
 C:/ti/ccs730/xdctools_3_50_03_33_core/packages/xdc/runtime/Types.h: 
 C:/ti/ccs730/xdctools_3_50_03_33_core/packages/xdc/runtime/IInstance.h: 
