@@ -50,6 +50,8 @@
  */
 #include <string.h>
 
+
+
 #include <ti/sysbios/knl/Task.h>
 #include <ti/sysbios/knl/Clock.h>
 #include <ti/sysbios/knl/Event.h>
@@ -342,13 +344,13 @@ void app_PWM_init(void)
       PWM_LED_Params.dutyUnits      = PWM_DUTY_FRACTION;
       PWM_LED_Params.dutyValue     = PWM_DUTY_FRACTION_MAX / 2;
 
-      PWM_LED_Handle = PWM_open(Board_GPIO_GLED, &PWM_LED_Params);
-      GPIO_write(Board_GPIO_RLED, 0);
+      PWM_Handle PWM_LED_Handle = PWM_open(Board_PWM1, &PWM_LED_Params);
       if(PWM_LED_Handle == NULL)
       {
           GPIO_write(Board_GPIO_RLED, 1);
-          while(1);
+          while(1){};
       }
+      PWM_start(PWM_LED_Handle);
     // End of modified code//
 }
 
@@ -1153,14 +1155,16 @@ static void SimpleBLEPeripheral_charValueChangeCB(uint8_t paramID)
 static void SimpleBLEPeripheral_processCharValueChangeEvt(uint8_t paramID)
 {
   uint8_t newValue;
+//  uint16_t sleep_time = 3000000/(Clock_tickPeriod);
 
   switch(paramID)
   {
     case SIMPLEPROFILE_CHAR1:
       SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1, &newValue);
-
+//      PWM_start(PWM_LED_Handle);
+//      Task_sleep(sleep_time);
+//      PWM_stop(PWM_LED_Handle);
       Display_print1(dispHandle, 4, 0, "Char 1: %d", (uint16_t)newValue);
-      PWM_start(PWM_LED_Handle);
       break;
 
     case SIMPLEPROFILE_CHAR3:
