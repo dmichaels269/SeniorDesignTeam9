@@ -89,8 +89,6 @@
  * CONSTANTS
  */
 
-//PWM Constants added by DM
-#define Stat_PWM_period                       50
 
 
 // Advertising interval when device is discoverable (units of 625us, 160=100ms)
@@ -123,7 +121,7 @@
 
 // How often to perform periodic event (in msec)
 #define SBP_PERIODIC_EVT_PERIOD               5000
-//#define SBP_LED_EVT_PERIOD                    500 //added by DM
+#define SBP_LED_EVT_PERIOD                    100 //added by DM
 //#define SBP_STAT_TO_EVT_PERIOD                60000 //added by DM
 
 // Application specific event ID for HCI Connection Event End Events
@@ -159,14 +157,14 @@
 #define SBP_ICALL_EVT                         ICALL_MSG_EVENT_ID // Event_Id_31
 #define SBP_QUEUE_EVT                         UTIL_QUEUE_EVENT_ID // Event_Id_30
 #define SBP_PERIODIC_EVT                      Event_Id_00
-//#define SBP_LED_EVT                           Event_Id_13 //Added by DM
+#define SBP_LED_EVT                           Event_Id_13 //Added by DM
 //#define SBP_STAT_TO_EVT                       Event_Id_14 //added by DM
 
 // Bitwise OR of all events to pend on (modded by DM)
 #define SBP_ALL_EVENTS                        (SBP_ICALL_EVT        | \
                                                SBP_QUEUE_EVT        | \
-                                               SBP_PERIODIC_EVT)
-//                                               SBP_LED_EVT          | \
+                                               SBP_PERIODIC_EVT     | \
+                                               SBP_LED_EVT)
 //                                               SBP_STAT_TO_EVT)
 
 /*********************************************************************
@@ -193,10 +191,10 @@ PWM_Handle PWM_LED_Handle; //Added by DM
  */
 
 //Variables for LED pwm control added by DM
-//uint8_t dutyInc = 5;
-//uint8_t first_flash = 1;
-//uint8_t Stat_duty = 0;
-//uint8_t Stat_Alarm_EN = 0;
+uint8_t dutyInc = 1;
+uint8_t first_flash = 1;
+uint8_t Stat_duty = 1;
+uint8_t Stat_Alarm_EN = 0;
 
 // Entity ID globally used to check for source and/or destination of messages
 static ICall_EntityID selfEntity;
@@ -207,7 +205,7 @@ static ICall_SyncHandle syncEvent;
 
 // Clock instances for internal periodic events.
 static Clock_Struct periodicClock;
-//static Clock_Struct ledClock; // added by DM
+static Clock_Struct ledClock; // added by DM
 //static Clock_Struct StatTimeout; // added by DM
 
 // Queue object used for app messages
@@ -294,7 +292,7 @@ static void SimpleBLEPeripheral_processAppMsg(sbpEvt_t *pMsg);
 static void SimpleBLEPeripheral_processStateChangeEvt(gaprole_States_t newState);
 static void SimpleBLEPeripheral_processCharValueChangeEvt(uint8_t paramID);
 static void SimpleBLEPeripheral_performPeriodicTask(void);
-//static void SimpleBLEPeripheral_performLEDTask(void); //added by DM
+static void SimpleBLEPeripheral_performLEDTask(void); //added by DM
 //static void SimpleBLEPeripheral_performStatTimeoutTask(void); //added by DM
 static void SimpleBLEPeripheral_clockHandler(UArg arg);
 
@@ -360,18 +358,18 @@ void app_PWM_init(void)
 
       PWM_LED_Params.idleLevel      = PWM_IDLE_LOW;
       PWM_LED_Params.periodUnits    = PWM_PERIOD_HZ;
-      PWM_LED_Params.periodValue   = 20000; // period in uS calculated by (1/(freq.))/10e-6
+      PWM_LED_Params.periodValue   = 100; // period in uS calculated by (1/(freq.))/10e-6
       PWM_LED_Params.dutyUnits      = PWM_DUTY_FRACTION;
-      PWM_LED_Params.dutyValue     = 100;  // ton in uS
+      PWM_LED_Params.dutyValue     = PWM_DUTY_FRACTION_MAX/2;  // ton in uS
 
 
-_Handle PWM_LED_Handle = PWM_open(Board_PWM1, &PWM_LED_Params);
+      PWM_LED_Handle = PWM_open(Board_PWM1, &PWM_LED_Params);
       if(PWM_LED_Handle == NULL)
       {
           GPIO_write(Board_GPIO_RLED, 1);
           while(1){};
       }
-      PWM_start(PWM_LED_Handle);
+      //PWM_start(PWM_LED_Handle);
     // End of modified code//
 }
 
@@ -446,8 +444,8 @@ static void SimpleBLEPeripheral_init(void)
   // Create one-shot clocks for internal periodic events. //modded by DM
   Util_constructClock(&periodicClock, SimpleBLEPeripheral_clockHandler,
                       SBP_PERIODIC_EVT_PERIOD, 0, false, SBP_PERIODIC_EVT);
-//  Util_constructClock(&ledClock, SimpleBLEPeripheral_clockHandler,
-//                      SBP_LED_EVT_PERIOD, 0, false, SBP_LED_EVT);
+  Util_constructClock(&ledClock, SimpleBLEPeripheral_clockHandler,
+                      SBP_LED_EVT_PERIOD, 0, false, SBP_LED_EVT);
 //  Util_constructClock(&StatTimeout, SimpleBLEPeripheral_clockHandler,
 //                      SBP_STAT_TO_EVT_PERIOD, 0, false, SBP_STAT_TO_EVT);
 
@@ -700,13 +698,13 @@ static void SimpleBLEPeripheral_taskFxn(UArg a0, UArg a1)
         // Perform periodic application task
         SimpleBLEPeripheral_performPeriodicTask();
       }
-//      if (events & SBP_LED_EVT)     //added by DM
-//      {
-//        Util_startClock(&ledClock);
-//
-//        // Perform periodic application task
-//        SimpleBLEPeripheral_performLEDTask();
-//      }
+      if (events & SBP_LED_EVT)     //added by DM
+      {
+        Util_startClock(&ledClock);
+
+        // Perform periodic application task
+        SimpleBLEPeripheral_performLEDTask();
+      }
 //      if (events & SBP_STAT_TO_EVT)     //added by DM
 //      {
 //        Stat_Alarm_EN = 0;
@@ -1196,11 +1194,20 @@ static void SimpleBLEPeripheral_processCharValueChangeEvt(uint8_t paramID)
   {
     case SIMPLEPROFILE_CHAR1:
       SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1, &newValue);
-//      if (newValue == 22) {
-//          Stat_Alarm_EN = 1;
-////          Util_startClock(&ledClock);
-////          Util_startClock(&StatTimeout);
+      if (newValue == 22) {
+//          PWM_start(PWM_LED_Handle);
 //      }
+//      else if (newValue == 16) {
+//          PWM_stop(PWM_LED_Handle);
+//      }
+          Stat_Alarm_EN = 1;
+          Util_startClock(&ledClock);
+////          Util_startClock(&StatTimeout);
+      }
+
+      else if (newValue == 16){
+          Stat_Alarm_EN = 0;
+      }
       Display_print1(dispHandle, 4, 0, "Char 1: %d", (uint16_t)newValue);
       break;
 
@@ -1244,39 +1251,39 @@ static void SimpleBLEPeripheral_performPeriodicTask(void)
                                &valueToCopy);
   }
 }
-////added by DM
-///*********************************************************************
-// * @fn      SimpleBLEPeripheral_performLEDTask
-// *
-// * @brief   Task triggered by LED clock.  Intended to be used to
-// *          be used to adjust the duty cycle of the LED every 0.5 seconds
-// *          to create breathing effect
-// *
-// * @param   None.
-// *
-// * @return  None.
-// */
-//static void SimpleBLEPeripheral_performLEDTask(void)
-//{
-//
-//  // If the stat alarm is enabled
-//  if (Stat_Alarm_EN == 1)
-//  {
-//      if (first_flash == 1) {
-//          PWM_start(PWM_LED_Handle);
-//          first_flash = 0;
-//      }
-//      PWM_setDuty(PWM_LED_Handle, Stat_duty);
-//      Stat_duty=(Stat_duty + dutyInc);
-//      if(Stat_duty == Stat_PWM_period || 0) {
-//          dutyInc = -dutyInc;
-//      }
-//  }
-//  else{
-//      PWM_stop(PWM_LED_Handle);
-//      first_flash = 1;
-//  }
-//}
+//added by DM
+/*********************************************************************
+ * @fn      SimpleBLEPeripheral_performLEDTask
+ *
+ * @brief   Task triggered by LED clock.  Intended to be used to
+ *          be used to adjust the duty cycle of the LED every 0.5 seconds
+ *          to create breathing effect
+ *
+ * @param   None.
+ *
+ * @return  None.
+ */
+static void SimpleBLEPeripheral_performLEDTask(void)
+{
+
+  // If the stat alarm is enabled
+  if (Stat_Alarm_EN == 1)
+  {
+      if (first_flash == 1) {
+          PWM_start(PWM_LED_Handle);
+          first_flash = 0;
+      }
+      PWM_setDuty(PWM_LED_Handle, PWM_DUTY_FRACTION_MAX/Stat_duty);
+      Stat_duty=(Stat_duty + dutyInc);
+      if(Stat_duty == 20 || Stat_duty == 1) {
+          dutyInc = -dutyInc;
+      }
+  }
+  else{
+      PWM_stop(PWM_LED_Handle);
+      first_flash = 1;
+  }
+}
 
 /*********************************************************************
  * @fn      SimpleBLEPeripheral_pairStateCB
