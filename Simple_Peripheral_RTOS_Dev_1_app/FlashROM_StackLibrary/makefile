@@ -179,7 +179,7 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@$(MAKE) --no-print-directory -Onone "Simple_Peripheral_RTOS_Dev_1_app.out"
 
 dependents:
-	-cd C:/Users/dan.michaels/workspace_v7/simple_peripheral_cc2640r2lp_stack_library/FlashROM_Library && $(MAKE) clean all
+	-cd C:/Users/dan.michaels/workspace_v7/simple_peripheral_cc2640r2lp_stack_library/FlashROM_Library && $(MAKE) all
 
 # Tool invocations
 Simple_Peripheral_RTOS_Dev_1_app.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS) C:/Users/dan.michaels/workspace_v7/simple_peripheral_cc2640r2lp_stack_library/FlashROM_Library/simple_peripheral_cc2640r2lp_stack_library.lib

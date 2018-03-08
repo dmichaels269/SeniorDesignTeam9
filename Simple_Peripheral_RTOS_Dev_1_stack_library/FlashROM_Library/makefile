@@ -164,10 +164,10 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LIB_OUTPUTS += \
-non_funcitioning_SBLEPeripheral_stack_library.lib \
+Simple_Peripheral_RTOS_Dev_1_stack_library.lib \
 
 LIB_OUTPUTS__QUOTED += \
-"non_funcitioning_SBLEPeripheral_stack_library.lib" \
+"Simple_Peripheral_RTOS_Dev_1_stack_library.lib" \
 
 
 # All Target
@@ -176,14 +176,14 @@ all:
 	@$(MAKE) --no-print-directory main-build
 
 # Main-build Target
-main-build: non_funcitioning_SBLEPeripheral_stack_library.lib
+main-build: Simple_Peripheral_RTOS_Dev_1_stack_library.lib
 
 # Tool invocations
-non_funcitioning_SBLEPeripheral_stack_library.lib: $(OBJS)
+Simple_Peripheral_RTOS_Dev_1_stack_library.lib: $(OBJS)
 ifneq ($(strip $(ORDERED_OBJS)),)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Archiver'
-	"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armar" r "non_funcitioning_SBLEPeripheral_stack_library.lib" $(ORDERED_OBJS)
+	"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armar" r "Simple_Peripheral_RTOS_Dev_1_stack_library.lib" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 endif
@@ -197,7 +197,7 @@ clean:
 	-@echo ' '
 
 pre-build:
-	-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/../../../tools/blestack/lib_search/lib_search         C:/Users/dan.michaels/workspace_v7/non_funcitioning_SBLEPeripheral_stack_library/TOOLS/build_config.opt         C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/blelib         C:/Users/dan.michaels/workspace_v7/simple_peripheral_cc2640r2lp_stack_library/FlashROM_Library/lib_linker.cmd         cc2640         C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/../../../tools/blestack/lib_search/lib_search.xml         C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/symbols
+	-C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/../../../tools/blestack/lib_search/lib_search         C:/Users/dan.michaels/Documents/GitHub/SeniorDesignTeam9/Simple_Peripheral_RTOS_Dev_1_stack_library/TOOLS/build_config.opt         C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/blelib         C:/Users/dan.michaels/workspace_v7/simple_peripheral_cc2640r2lp_stack_library/FlashROM_Library/lib_linker.cmd         cc2640         C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/../../../tools/blestack/lib_search/lib_search.xml         C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/blestack/symbols
 	-@echo ' '
 
 .PHONY: all clean dependents
