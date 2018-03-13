@@ -59,6 +59,7 @@
 #include <ti/display/Display.h>
 #include <ti/drivers/gpio/GPIOCC26XX.h> //Added by DM to enable functionality of GPIO
 #include <ti/drivers/pwm/PWMTimerCC26XX.h> //Added by DM to enable PWM Timer
+#include <ti/drivers/ADC.h>
 
 #if defined( USE_FPGA ) || defined( DEBUG_SW_TRACE )
 #include <driverlib/ioc.h>
@@ -82,7 +83,6 @@
 #include "board_key.h"
 
 #include "board.h"
-
 #include "simple_peripheral.h"
 
 /*********************************************************************
@@ -140,8 +140,15 @@
   #define SBP_DISPLAY_TYPE 0 // No Display
 #endif // !Display_DISABLE_ALL
 
+// Task configuration added by DM
+#define BL_TASK_PRIORITY                     1
+
+#ifndef BL_TASK_STACK_SIZE
+#define BL_TASK_STACK_SIZE                   644
+#endif
+
 // Task configuration
-#define SBP_TASK_PRIORITY                     1
+#define SBP_TASK_PRIORITY                     2
 
 #ifndef SBP_TASK_STACK_SIZE
 #define SBP_TASK_STACK_SIZE                   700
@@ -190,6 +197,11 @@ PWM_Handle PWM_LED_Handle; //Added by DM
  * LOCAL VARIABLES
  */
 
+/* ADC conversion result variables added by DM*/
+uint16_t adcValue0;
+uint32_t adcValue0MicroVolt;
+
+
 //Variables for LED pwm control added by DM
 uint8_t dutyInc = 1;
 uint8_t first_flash = 1;
@@ -215,6 +227,10 @@ static Queue_Handle appMsgQueue;
 // Task configuration
 Task_Struct sbpTask;
 Char sbpTaskStack[SBP_TASK_STACK_SIZE];
+
+// Bat Level configuration by DM
+Task_Struct BLTask;
+Char BLTaskStack[BL_TASK_STACK_SIZE];
 
 // Scan response data (max size = 31 bytes)
 static uint8_t scanRspData[] =
@@ -285,7 +301,7 @@ static uint8_t rspTxRetry = 0;
 
 static void SimpleBLEPeripheral_init( void );
 static void SimpleBLEPeripheral_taskFxn(UArg a0, UArg a1);
-
+//static void BatLevel_taskFxn(UArg a0, UArg a1);
 static uint8_t SimpleBLEPeripheral_processStackMsg(ICall_Hdr *pMsg);
 static uint8_t SimpleBLEPeripheral_processGATTMsg(gattMsgEvent_t *pMsg);
 static void SimpleBLEPeripheral_processAppMsg(sbpEvt_t *pMsg);
@@ -394,6 +410,29 @@ void SimpleBLEPeripheral_createTask(void)
 
   Task_construct(&sbpTask, SimpleBLEPeripheral_taskFxn, &taskParams, NULL);
 }
+
+/*********************************************************************
+ * @fn      BatLevel_createTask
+ *
+ * @brief   Task creation function for the Simple Peripheral.
+ *
+ * @param   None.
+ *
+ * @return  None.
+ */
+//void BatLevel_createTask(void)
+//{
+//
+//  Task_Params taskParams;
+//
+//  // Configure task
+//  Task_Params_init(&taskParams);
+//  taskParams.stack = BLTaskStack;
+//  taskParams.stackSize = BL_TASK_STACK_SIZE;
+//  taskParams.priority = BL_TASK_PRIORITY;
+//
+//  Task_construct(&BLTask, BatLevel_taskFxn, &taskParams, NULL);
+//}
 
 /*********************************************************************
  * @fn      SimpleBLEPeripheral_init
@@ -606,6 +645,45 @@ static void SimpleBLEPeripheral_init(void)
 
   Display_print0(dispHandle, 0, 0, "BLE Peripheral");
 }
+
+///*********************************************************************
+// * @fn      BatLevel_taskFxn added by DM
+// *
+// * @brief   Task to manage sampling battery level
+// *
+// * @param   a0, a1 - not used.
+// *
+// * @return  None.
+// */
+//static void BatLevel_taskFxn(UArg a0, UArg a1)
+//{
+//    ADC_Handle   adc;
+//    ADC_Params   adcparams;
+//    int_fast16_t res;
+//
+//    ADC_Params_init(&adcparams);
+//    adc = ADC_open(CC2640R2_LAUNCHXL_ADC0, &adcparams);
+//
+//    if (adc == NULL) {
+//        GPIO_write(Board_GPIO_RLED, 1);
+//        while (1);
+//    }
+//
+//    /* Blocking mode conversion */
+//    res = ADC_convert(adc, &adcValue0);
+//
+//    if (res == ADC_STATUS_SUCCESS) {
+//
+//        adcValue0MicroVolt = ADC_convertRawToMicroVolts(adc, adcValue0);
+//        SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR2, sizeof(uint32_t),
+//                                   &adcValue0MicroVolt);
+//        //Display_printf(display, 0, 0, "ADC channel 0 convert result: %d uV\n", adcValue0MicroVolt);
+//    }
+//    else {
+//        SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR2, sizeof(uint8_t),
+//                                   0);
+//    }
+//}
 
 /*********************************************************************
  * @fn      SimpleBLEPeripheral_taskFxn
@@ -1250,6 +1328,37 @@ static void SimpleBLEPeripheral_performPeriodicTask(void)
     SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR4, sizeof(uint8_t),
                                &valueToCopy);
   }
+
+      ADC_Handle   adc;
+      ADC_Params   adcparams;
+      int_fast16_t res;
+
+      ADC_Params_init(&adcparams);
+      adc = ADC_open(CC2640R2_LAUNCHXL_ADC0, &adcparams);
+
+      if (adc == NULL) {
+          GPIO_write(Board_GPIO_RLED, 1);
+          while (1);
+      }
+
+      /* Blocking mode conversion */
+      res = ADC_convert(adc, &adcValue0);
+
+      if (res == ADC_STATUS_SUCCESS) {
+
+          adcValue0MicroVolt = ADC_convertRawToMicroVolts(adc, adcValue0);
+          adcValue0MicroVolt = (100*adcValue0MicroVolt)/3300000;
+          SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR2, sizeof(uint16_t),
+                                     &adcValue0MicroVolt);
+          //Display_printf(display, 0, 0, "ADC channel 0 convert result: %d uV\n", adcValue0MicroVolt);
+      }
+      else {
+          adcValue0MicroVolt = 0;
+          SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR2, sizeof(uint16_t),
+                                     &adcValue0MicroVolt);
+      }
+      Display_print1(dispHandle, 6, 0, "ADC Value: %d", adcValue0MicroVolt);
+      ADC_close(adc);
 }
 //added by DM
 /*********************************************************************

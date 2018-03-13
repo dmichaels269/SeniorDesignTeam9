@@ -211,12 +211,16 @@ int main()
   /* Start tasks of external images - Priority 5 */
   ICall_createRemoteTasks();
 
-
+  ADC_init();
 
   /* Kick off profile - Priority 3 */
   GAPRole_createTask();
 
+  /*Main thread - Priority 1*/
   SimpleBLEPeripheral_createTask();
+
+  /*Bat Level Task to report battery status - Priority 2*/
+//  BatLevel_createTask();
 
   app_PWM_init();
 

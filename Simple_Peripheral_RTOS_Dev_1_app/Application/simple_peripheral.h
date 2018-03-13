@@ -77,7 +77,7 @@ extern "C"
  * Task creation function for the Simple Peripheral.
  */
 extern void SimpleBLEPeripheral_createTask(void);
-
+//extern void BatLevel_createTask(void);
 extern void app_PWM_init(void);
 
 /*********************************************************************

@@ -138,7 +138,7 @@ static uint8 simpleProfileChar1Props = GATT_PROP_READ | GATT_PROP_WRITE;
 static uint8 simpleProfileChar1 = 0;
 
 // Simple Profile Characteristic 1 User Description
-static uint8 simpleProfileChar1UserDesp[17] = "Characteristic 1";
+static uint8 simpleProfileChar1UserDesp[17] = "LED Toggle";
 
 
 // Simple Profile Characteristic 2 Properties
@@ -148,7 +148,7 @@ static uint8 simpleProfileChar2Props = GATT_PROP_READ;
 static uint8 simpleProfileChar2 = 0;
 
 // Simple Profile Characteristic 2 User Description
-static uint8 simpleProfileChar2UserDesp[17] = "Characteristic 2";
+static uint8 simpleProfileChar2UserDesp[17] = "Bat Level";
 
 
 // Simple Profile Characteristic 3 Properties
