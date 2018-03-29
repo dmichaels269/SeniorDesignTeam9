@@ -64,10 +64,10 @@
 #include <driverlib/ioc.h>
 #endif // USE_FPGA | DEBUG_SW_TRACE
 
-#include <icall.h>
-#include "util.h"
 /* This Header file contains all BLE API and icall structure definition */
 #include "icall_ble_api.h"
+#include <icall.h>
+#include "util.h"
 
 #include "devinfoservice.h"
 #include "simple_gatt_profile.h"
@@ -80,7 +80,6 @@
 #endif //USE_RCOSC
 
 #include "board_key.h"
-
 #include "board.h"
 
 #include "simple_peripheral.h"
@@ -122,6 +121,8 @@
 
 // Application specific event ID for HCI Connection Event End Events
 #define SBP_HCI_CONN_EVT_END_EVT              0x0001
+
+#define USE_LL_CONN_PARAM_UPDATE 		// TW Define to use a different protocal than L2CAP for message handeling 
 
 // Type of Display to open
 #if !defined(Display_DISABLE_ALL)
@@ -204,7 +205,7 @@ Char sbpTaskStack[SBP_TASK_STACK_SIZE];
 static uint8_t scanRspData[] =
 {
   // complete name
-  0x14,   // length of this data
+  0x16,   // length of this data
   GAP_ADTYPE_LOCAL_NAME_COMPLETE,
   'P',
   'R',
@@ -628,10 +629,7 @@ static void SimpleBLEPeripheral_taskFxn(UArg a0, UArg a1)
           // Check for BLE stack events first
           if (pEvt->signature == 0xffff)
           {
-            // The GATT server might have returned a blePending as it was trying
-            // to process an ATT Response. Now that we finished with this
-            // connection event, let's try sending any remaining ATT Responses
-            // on the next connection event.
+            // The GATT server might have returned a blePending as it was trying to process an ATT Response. Now that we finished with this connection event, let's try sending any remaining ATT Responses on the next connection event.
             if (pEvt->event_flag & SBP_HCI_CONN_EVT_END_EVT)
             {
               // Try to retransmit pending ATT Response (if any)
@@ -708,7 +706,6 @@ static uint8_t SimpleBLEPeripheral_processStackMsg(ICall_Hdr *pMsg)
           case HCI_COMMAND_COMPLETE_EVENT_CODE:
             // Process HCI Command Complete Event
             {
-
 #if !defined (USE_LL_CONN_PARAM_UPDATE)
               // This code will disable the use of the LL_CONNECTION_PARAM_REQ
               // control procedure (for connection parameter updates, the
