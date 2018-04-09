@@ -51,6 +51,7 @@
 #include <xdc/runtime/Error.h>
 
 #include <ti/drivers/Power.h>
+#include <ti/drivers/GPIO.h>
 #include <ti/drivers/power/PowerCC26XX.h>
 #include <ti/sysbios/BIOS.h>
 #include <ti/sysbios/knl/Clock.h>
@@ -212,6 +213,7 @@ int main()
   ICall_createRemoteTasks();
 
   ADC_init();
+  GPIO_setConfig(Board_DIO22, GPIO_CFG_OUT_STR_HIGH);
 
   /* Kick off profile - Priority 3 */
   GAPRole_createTask();

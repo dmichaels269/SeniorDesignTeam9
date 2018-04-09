@@ -65,10 +65,11 @@
 #include <driverlib/ioc.h>
 #endif // USE_FPGA | DEBUG_SW_TRACE
 
-#include <icall.h>
-#include "util.h"
+
 /* This Header file contains all BLE API and icall structure definition */
 #include "icall_ble_api.h"
+#include <icall.h>
+#include "util.h"
 
 #include "devinfoservice.h"
 #include "simple_gatt_profile.h"
@@ -81,7 +82,6 @@
 #endif //USE_RCOSC
 
 #include "board_key.h"
-
 #include "board.h"
 #include "simple_peripheral.h"
 
@@ -121,11 +121,13 @@
 
 // How often to perform periodic event (in msec)
 #define SBP_PERIODIC_EVT_PERIOD               5000
-#define SBP_LED_EVT_PERIOD                    100 //added by DM
+#define SBP_LED_EVT_PERIOD                    25 //added by DM
 //#define SBP_STAT_TO_EVT_PERIOD                60000 //added by DM
 
 // Application specific event ID for HCI Connection Event End Events
 #define SBP_HCI_CONN_EVT_END_EVT              0x0001
+
+#define USE_LL_CONN_PARAM_UPDATE        // TW Define to use a different protocal than L2CAP for message handeling
 
 // Type of Display to open
 #if !defined(Display_DISABLE_ALL)
@@ -160,17 +162,38 @@
 #define SBP_PAIRING_STATE_EVT                 0x0004
 #define SBP_PASSCODE_NEEDED_EVT               0x0008
 
+//// Internal Events for RTOS application
+//#define SBP_ICALL_EVT                         ICALL_MSG_EVENT_ID // Event_Id_31
+//#define SBP_QUEUE_EVT                         UTIL_QUEUE_EVENT_ID // Event_Id_30
+//#define SBP_PERIODIC_EVT                      Event_Id_00
+//#define SBP_LED_EVT                           Event_Id_13 //Added by DM
+////#define SBP_STAT_TO_EVT                       Event_Id_14 //added by DM
+//
+//// Bitwise OR of all events to pend on (modded by DM)
+//#define SBP_ALL_EVENTS                        (SBP_ICALL_EVT        | \
+//                                               SBP_QUEUE_EVT        | \
+//                                               SBP_PERIODIC_EVT     | \
+//                                               SBP_LED_EVT)
+
 // Internal Events for RTOS application
 #define SBP_ICALL_EVT                         ICALL_MSG_EVENT_ID // Event_Id_31
 #define SBP_QUEUE_EVT                         UTIL_QUEUE_EVENT_ID // Event_Id_30
-#define SBP_PERIODIC_EVT                      Event_Id_00
-#define SBP_LED_EVT                           Event_Id_13 //Added by DM
-//#define SBP_STAT_TO_EVT                       Event_Id_14 //added by DM
+#define SBP_STATE_CHANGE_EVT                  Event_Id_00
+#define SBP_CHAR_CHANGE_EVT                   Event_Id_01
+#define SBP_PERIODIC_EVT                      Event_Id_02
+#define SBP_APP_MSG_EVT                       Event_Id_03
+#define SBP_CONN_EVT_END_EVT                  Event_Id_30
+#define SBP_LED_EVT                           Event_Id_13
 
-// Bitwise OR of all events to pend on (modded by DM)
+
+// Bitwise OR of all events to pend on
 #define SBP_ALL_EVENTS                        (SBP_ICALL_EVT        | \
                                                SBP_QUEUE_EVT        | \
+                                               SBP_STATE_CHANGE_EVT | \
+                                               SBP_CHAR_CHANGE_EVT  | \
                                                SBP_PERIODIC_EVT     | \
+                                               SBP_APP_MSG_EVT      | \
+                                               SBP_CONN_EVT_END_EVT | \
                                                SBP_LED_EVT)
 //                                               SBP_STAT_TO_EVT)
 
@@ -236,7 +259,7 @@ Char BLTaskStack[BL_TASK_STACK_SIZE];
 static uint8_t scanRspData[] =
 {
   // complete name
-  0x14,   // length of this data
+  0x16,   // length of this data
   GAP_ADTYPE_LOCAL_NAME_COMPLETE,
   'P',
   'R',
@@ -283,7 +306,7 @@ static uint8_t advertData[] =
   // service UUID, to notify central devices what services are included
   // in this peripheral
   0x03,   // length of this data
-  GAP_ADTYPE_16BIT_MORE,      // some of the UUID's, but not all
+  GAP_ADTYPE_128BIT_COMPLETE,      // some of the UUID's, but not all
   LO_UINT16(SIMPLEPROFILE_SERV_UUID),
   HI_UINT16(SIMPLEPROFILE_SERV_UUID)
 };
@@ -1317,7 +1340,7 @@ static void SimpleBLEPeripheral_processCharValueChangeEvt(uint8_t paramID)
 static void SimpleBLEPeripheral_performPeriodicTask(void)
 {
   uint8_t valueToCopy;
-
+  GPIO_write(Board_DIO22, 1);
   // Call to retrieve the value of the third characteristic in the profile
   if (SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR3, &valueToCopy) == SUCCESS)
   {
@@ -1345,11 +1368,11 @@ static void SimpleBLEPeripheral_performPeriodicTask(void)
       res = ADC_convert(adc, &adcValue0);
 
       if (res == ADC_STATUS_SUCCESS) {
-
           adcValue0MicroVolt = ADC_convertRawToMicroVolts(adc, adcValue0);
-          adcValue0MicroVolt = (100*adcValue0MicroVolt)/3300000;
-          SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR2, sizeof(uint16_t),
+          adcValue0MicroVolt = (adcValue0MicroVolt)/10000; /*At voltage divider: 100% battery @ 2.76V(4.2) and 0% battery at 1.73V(3.2)*/
+          SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR2, sizeof(uint8_t),
                                      &adcValue0MicroVolt);
+//          GPIO_write(Board_DIO22, 0);
           //Display_printf(display, 0, 0, "ADC channel 0 convert result: %d uV\n", adcValue0MicroVolt);
       }
       else {

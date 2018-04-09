@@ -51,6 +51,7 @@ Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/Pow
 Startup/main.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdbool.h
 Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/utils/List.h
 Startup/main.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h
+Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/GPIO.h
 Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/power/PowerCC26XX.h
 Startup/main.obj: C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/dpl/HwiP.h
 Startup/main.obj: C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h
@@ -240,6 +241,7 @@ C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/Power.h:
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stdbool.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/utils/List.h: 
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h: 
+C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/GPIO.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/power/PowerCC26XX.h: 
 C:/ti/simplelink_cc2640r2_sdk_1_50_00_58/source/ti/drivers/dpl/HwiP.h: 
 C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include/stddef.h: 
